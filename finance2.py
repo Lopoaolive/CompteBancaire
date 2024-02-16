@@ -5,7 +5,7 @@ import joblib
 from sklearn.preprocessing import LabelEncoder
 
 #affiche des titres
-st.title("prediction de la probabibilité d'existance de compte bancaire")
+st.title("prediction de la probabibilité d'acquisition de compte bancaire")
 st.subheader("model de regression logistique")
 
 # chargement du ficher joblib du model de regression logistique
@@ -48,6 +48,6 @@ job_type = st.selectbox("Job Type", options=["Farming and Fishing", "Self employ
 if st.button("Predict"):
     prediction = inference(location_type, cellphone_access, age_of_respondent, gender_of_respondent, education_level, job_type)
     if prediction == 1:
-        st.success("Yes: La personne a un compte bancaire.")
+        st.success("Yes: La personne peut avoir compte bancaire.")
     else:
-        st.success("No: La personne n'a pas de compte bancaire.")
+        st.success("No: La personne ne peut pas avoir de compte bancaire.")
